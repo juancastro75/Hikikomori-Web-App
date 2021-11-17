@@ -1,0 +1,43 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile>
+    <div class="login">
+      <div class="login-content">
+        <div class="login-img">
+          <img src="../../assets/Logo.png" alt="">
+        </div>
+        <div class="login-title">
+          <p>Iniciar Sesion</p>
+        </div>
+        <div class="login-subtitle">
+          <p>Ingresa tu dirección de correo electrónico y contraseña para acceder a tu cuenta</p>
+        </div>
+        <div class="login-form">
+         <form class="form-width">
+           <p>
+             <mat-form-field class="full-width">
+               <mat-label>Correo electronico</mat-label>
+               <input matInput type="email" placeholder="example@email.com">
+             </mat-form-field>
+           </p>
+           <p>
+             <mat-form-field class="full-width">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" placeholder="Escribe tu contraseña">
+            </mat-form-field>
+           </p>
+           <button class="full-width login-button" type="submit" mat-raised-button color="primary">Iniciar Sesion</button>
+         </form>
+        </div>
+        <div class="register">
+          <p>¿No tienes una cuenta? <a href="/register">Crea una cuenta aqui</a></p>
+        </div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="image">
+      <img src="../../assets/image-login.png" alt="">
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+

@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.menubar {
+  position: sticky;
+  top: 0;
+}
+
+.contenido {
+  margin: 30px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#slider {
+  position: relative;
+  width: 50%;
+  height: 30vw;
+  background: transparent;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+#slider input {
+  display: none;
+}
+
+#slider label{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+#slider label img {
+  border-radius: 5px;
+}
+
+/*Estilos para navegación automatica*/
+.circulo {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 365px;
+}
+
+.circulo div {
+  border: 2px solid #00A878;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.circulo div:not(:last-child) {
+  margin-right: 20px;
+}
+
+#s1:checked ~ .circulo .auto-btn1,
+#s2:checked ~ .circulo .auto-btn2,
+#s3:checked ~ .circulo .auto-btn3,
+#s4:checked ~ .circulo .auto-btn4,
+#s5:checked ~ .circulo .auto-btn5 {
+  background: #00A878;
+}
+
+/*Slider Funcionalidad*/
+
+/*Banner del centro*/
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.6), 0 12px 6px rgba(0,0,0,0.2);
+  transform: translate3d(0%,0,0px);
+}
+/*Primer Banner a la derecha*/
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide1  {
+  box-shadow:  0 13px 26px rgba(0, 0, 0, 0.6), 0 12px 6px rgba(0,0,0,0.2);
+  transform: translate3d(15%,0,-100px);
+}
+/*Segundo Banner a la derecha*/
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+  box-shadow:  0 13px 26px rgba(0, 0, 0, 0.6), 0 12px 6px rgba(0,0,0,0.2);
+  transform: translate3d(30%,0,-250px);
+}
+/*Segundo Banner a la izquierda*/
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  box-shadow:  0 13px 26px rgba(0, 0, 0, 0.6), 0 12px 6px rgba(0,0,0,0.2);
+  transform: translate3d(-30%,0,-250px);
+}
+/*Pimer Banner a la izquierda*/
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4  {
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.6), 0 12px 6px rgba(0,0,0,0.2);
+  transform: translate3d(-15%,0,-100px);
+}
+
+/*Flechas del slider*/
+.hi-next,
+.hi-prev {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  background: white;
+  color: black;
+  transition: all 0.7s;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hi-next:hover,
+.hi-prev:hover {
+  opacity: 1;
+  background-color: #00A878;
+  color: white;
+}
+
+.hi-prev {
+  left: 59px;
+}
+
+.hi-prev::before {
+  content: '<';
+}
+
+.hi-next {
+  right: 59px;
+}
+
+.hi-next::before {
+  content: '>';
+}
