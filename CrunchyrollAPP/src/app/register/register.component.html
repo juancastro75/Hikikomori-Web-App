@@ -12,36 +12,36 @@
           <p>Ingresa tus datos y disfruta de tus animes favoritos con tu cuenta Crunchyroll</p>
         </div>
         <div class="login-form">
-         <form class="form-width">
+         <form class="form-width" [formGroup]="register">
           <p>
             <mat-form-field class="full-width">
               <mat-label>Usuario en Crunchyroll</mat-label>
-              <input matInput type="text" placeholder="Inserta tu nombre de usuario con el que quieras que te conozcan">
+              <input matInput type="text" placeholder="Inserta tu nombre de usuario con el que quieras que te conozcan" formControlName="username">
             </mat-form-field>
            </p>
            <p>
              <mat-form-field class="full-width">
                <mat-label>Correo electronico</mat-label>
-               <input matInput type="email" placeholder="example@email.com">
+               <input matInput type="email" placeholder="example@email.com" formControlName="email">
              </mat-form-field>
            </p>
            <p>
             <mat-form-field class="full-width">
               <mat-label>Contraseña</mat-label>
-              <input matInput type="password" placeholder="Escribe tu contraseña">
+              <input matInput type="password" placeholder="Escribe tu contraseña" formControlName="password">
             </mat-form-field>
            </p>
            <p>
              <mat-form-field class="full-width">
               <mat-label>Confirmar ontraseña</mat-label>
-              <input matInput type="password" placeholder="Escribe otra vez tu contraseña para confirmar">
+              <input matInput type="password" placeholder="Escribe otra vez tu contraseña para confirmar" formControlName="cpassword">
             </mat-form-field>
            </p>
-           <button class="full-width login-button" type="submit" mat-raised-button color="primary">Registrar</button>
+           <button class="full-width login-button" (click)="Registrar()" type="submit" mat-raised-button color="primary">Registrar</button>
          </form>
         </div>
         <div class="register">
-          <p>¿No tienes una cuenta? <a href="/login">Crea una cuenta aqui</a></p>
+          <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesion aqui</a></p>
         </div>
       </div>
     </div>
