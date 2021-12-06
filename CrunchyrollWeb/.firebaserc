@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crunchyroll-9401b": {
+      "hosting": {
+        "CrunchyrollWeb": [
+          "crunchyroll-9401b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crunchyroll-9401b"
+  }
+}

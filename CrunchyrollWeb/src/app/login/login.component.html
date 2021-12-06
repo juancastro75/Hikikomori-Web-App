@@ -1,0 +1,53 @@
+<div class="login">
+  <div class="login-card">
+    <div class="login-content">
+      <div class="login-img">
+        <img src="../../assets/Logo.png" alt="">
+      </div>
+      <div class="login-title">
+        <p>Iniciar Sesion</p>
+      </div>
+      <div class="login-subtitle">
+        <p>Ingresa tu dirección de correo electrónico y contraseña para acceder a tu cuenta</p>
+      </div>
+      <div class="login-form">
+       <form class="form-width" [formGroup]="login">
+         <p>
+           <mat-form-field class="full-width">
+             <mat-label>Correo electronico</mat-label>
+             <input matInput type="email" placeholder="example@email.com" formControlName="email">
+           </mat-form-field>
+         </p>
+         <p>
+           <mat-form-field class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Escribe tu contraseña" formControlName="password">
+          </mat-form-field>
+         </p>
+         <button class="full-width login-button" (click)="onLogin()" type="submit" mat-raised-button>Iniciar Sesion</button>
+       </form>
+      </div>
+      <div class="login-subtitle">
+        <p>o</p>
+      </div>
+      <div class="grid-buttons-red-social">
+        <div class="login-google">
+          <button class="full-width Googlelogin-button" (click)="GoogleLogin()"  mat-raised-button>
+            <i class='bx bxl-google' ></i>
+            Continuar con Google
+          </button>
+        </div>
+        <div class="login-facebook">
+          <button class="full-width Facebooklogin-button" (click)="FacebookLogin()"  mat-raised-button>
+            <i class='bx bxl-facebook-circle'></i>
+            Continuar con Facebook
+          </button>
+        </div>
+      </div>
+      <div class="register">
+        <p>¿No tienes una cuenta? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Crea una cuenta aqui</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
