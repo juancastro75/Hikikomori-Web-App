@@ -8,11 +8,14 @@ import firebase from "firebase/compat/app";
 })
 export class AuthService {
 
+  public isLogged = false;
+
   constructor(private router: Router, private afAuth: AngularFireAuth) { }
 
    async login(email: string, password: string) {
     try {
       await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.isLogged = true;
       this.router.navigate(['/home']);
     }
     catch (error) {
@@ -23,6 +26,7 @@ export class AuthService {
   async Googlelogin() {
     try {
       await this.afAuth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
+      this.isLogged = true;
       this.router.navigate(['/home']);
     }
     catch (error) {
@@ -33,6 +37,7 @@ export class AuthService {
   async Facebooklogin() {
     try {
       await this.afAuth.signInWithPopup( new firebase.auth.FacebookAuthProvider());
+      this.isLogged = true;
       this.router.navigate(['/home']);
     }
     catch (error) {
@@ -40,9 +45,14 @@ export class AuthService {
     }
   }
 
+  getUserLogeed() {
+    return this.afAuth.authState;
+  }
+
   async register(email: string, password: string) {
     try {
       await this.afAuth.createUserWithEmailAndPassword(email, password);
+      this.isLogged = true;
       this.router.navigate(['/home']);
     }
     catch (error) {
@@ -53,6 +63,7 @@ export class AuthService {
   async logout() {
     try {
       await this.afAuth.signOut();
+      this.isLogged = false;
       this.router.navigate(['/login']);
     }
     catch (error) {

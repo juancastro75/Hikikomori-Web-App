@@ -30,20 +30,10 @@
       <div class="login-subtitle">
         <p>o</p>
       </div>
-      <div class="grid-buttons-red-social">
-        <div class="login-google">
-          <button class="full-width Googlelogin-button" (click)="GoogleLogin()"  mat-raised-button>
-            <i class='bx bxl-google' ></i>
-            Continuar con Google
-          </button>
-        </div>
-        <div class="login-facebook">
-          <button class="full-width Facebooklogin-button" (click)="FacebookLogin()"  mat-raised-button>
-            <i class='bx bxl-facebook-circle'></i>
-            Continuar con Facebook
-          </button>
-        </div>
-      </div>
+      <button class="full-width Googlelogin-button" (click)="GoogleLogin()" mat-raised-button>
+        <i class='bx bxl-google' ></i>
+        Continuar con Google
+      </button>
       <div class="register">
         <p>¿No tienes una cuenta? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Crea una cuenta aqui</a></p>
       </div>

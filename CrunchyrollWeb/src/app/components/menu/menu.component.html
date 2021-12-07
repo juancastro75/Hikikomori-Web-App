@@ -1,0 +1,55 @@
+<div class="sidebar">
+  <div class="logo-content">
+    <div class="logo">
+      <img src="../../../assets/Logotipo.png" alt="">
+    </div>
+  </div>
+  <ul class="nav_list">
+    <li>
+      <i class='bx bx-search'></i>
+      <input type="text" placeholder="Buscar...">
+      <!-- <span class="tooltip">Inicio</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-home-alt'></i>
+        <span class="links_name">Inicio</span>
+      </a>
+      <!-- <span class="tooltip">Inicio</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-slideshow'></i>
+        <span class="links_name">Animes</span>
+      </a>
+      <!-- <span class="tooltip">Animes</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-list-ul'></i>
+        <span class="links_name">Mi Lista</span>
+      </a>
+      <!-- <span class="tooltip">Mi Lista</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-bell'></i>
+        <span class="links_name">Notificaciones</span>
+      </a>
+      <!-- <span class="tooltip">Notificaciones</span> -->
+    </li>
+  </ul>
+  <div class="profile_content">
+    <div class="profile" *ngIf="userLogged | async as user" >
+      <div class="profile_details">
+        <img src="{{user.photoURL}}" alt="">
+        <div class="name_user">
+          <div class="name">{{user.displayName}}</div>
+          <div class="email">{{user.email}}</div>
+        </div>
+      </div>
+      <i class='bx bx-log-out' id="log_out" (click)="Logout()"></i>
+    </div>
+    <button *ngIf="!isLogged"  class="login-button" [routerLink]="['/login']" mat-raised-button>Iniciar Sesion</button>
+  </div>
+</div>
